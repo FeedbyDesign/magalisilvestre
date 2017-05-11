@@ -20,73 +20,24 @@ class Index extends React.Component {
   render() {
 
     return (
-      <div>
-
-        THE DUCK IS COOKED
-
-      </div>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: this.props.data.underConstruction.html,
+        }}
+        />
     )
   }
 }
 
 export default Index
 
-// export const pageQuery = `
-// query {
-//   allFile (
-//     mediaType: {regex: "/image/i"}
-//   ) {
-//     edges {
-//       node {
-//         id
-//         ext
-//         name
-//         base
-//         relativePath
-//         type
-//         mediaType
-//         children {
-//           ... on ImageSharp {
-//             micro: responsiveSizes(maxWidth: 20) {
-//               src
-//               base64
-//               aspectRatio
-//             },
-//             w110: responsiveSizes(maxWidth: 110) {
-//               src
-//               srcSet
-//               aspectRatio
-//             },
-//             w350: responsiveSizes(maxWidth: 350) {
-//               src
-//               srcSet
-//               aspectRatio
-//             },
-//             w410: responsiveSizes(maxWidth: 410) {
-//               src
-//               srcSet
-//               aspectRatio
-//             },
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-// `
-// sortBy: { order: DESC, fields: [frontmatter___date] },
-//     frontmatter: { draft: { ne: true } },
-//     fileAbsolutePath: { regex: "/blog/" },
-
-// query Image($name: fileNameQueryString!){
-//   file (name: $name) {
-//     id
-//     ext
-//     name
-// 		 base
-//     relativePath
-//     type
-//     mediaType
-//
-//   }
-// }
+export const pageQuery = graphql`
+query Index {
+  underConstruction: markdownRemark (id: {regex: "data/underConstruction/i"}){
+    html
+    frontmatter {
+      name
+    }
+  }
+}
+`
