@@ -1,8 +1,8 @@
 import React from "react"
-import Helmet from 'react-helmet'
 import { TypographyStyle } from "react-typography"
 
 import typography from "./utils/typography"
+import { meta } from "./utils/metadata"
 
 let stylesStr
 if (process.env.NODE_ENV === `production`) {
@@ -15,9 +15,6 @@ if (process.env.NODE_ENV === `production`) {
 
 module.exports = React.createClass({
   render() {
-    const helmet = Helmet.renderStatic()
-    const htmlAttrs = helmet.htmlAttributes.toComponent()
-    const bodyAttrs = helmet.bodyAttributes.toComponent()
 
     let css
     if (process.env.NODE_ENV === `production`) {
@@ -30,11 +27,23 @@ module.exports = React.createClass({
     }
 
     return (
-      <html {...htmlAttrs}>
+      <html>
         <head>
           <link
             rel="preload"
-            href={`/static/quicksand-latin-500.cf60f1b7.woff2`}
+            href={`/static/montserrat-latin-300.d2ad295b.woff2`}
+            as="font"
+            crossOrigin
+          />
+          <link
+            rel="preload"
+            href={`/static/montserrat-latin-400.240a8444.woff2`}
+            as="font"
+            crossOrigin
+          />
+          <link
+            rel="preload"
+            href={`/static/montserrat-latin-700.7d77e1f0.woff2`}
             as="font"
             crossOrigin
           />
@@ -46,13 +55,29 @@ module.exports = React.createClass({
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          {helmet.title.toComponent()}
-          {helmet.meta.toComponent()}
-          {helmet.link.toComponent()}
+          <html lang={`${meta.lang}`} />
+          <meta property="og:type" content="website" />
+          <meta property="og:image" content={`${meta.url}static${require(`!file-loader!../static/images/fb.png`)}`} />
+          <meta property="og:site_name" content={`${meta.name}`} />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href={require(`!file-loader!../static/images/favicons/favicon-32x32.png`)}
+          />
+
+          <title>{`${meta.title} | ${meta.name}`}</title>
+          <meta property="og:title" content={`${meta.title} | ${meta.name}`} />
+          <meta name="description" content={`${meta.description}`} />
+          <meta property="og:description" content={`${meta.description}`} />
+          <link rel="canonical" href={`${meta.url}`} />
+          <meta property="og:url" content={`${meta.url}`} />
+
+
           <TypographyStyle typography={typography} />
           {css}
         </head>
-        <body {...bodyAttrs}>
+        <body>
           <div
             id="react-mount"
             dangerouslySetInnerHTML={{ __html: this.props.body }}

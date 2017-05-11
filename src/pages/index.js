@@ -1,6 +1,4 @@
 import React from 'react'
-import _ from 'lodash'
-import { Helmet } from "react-helmet"
 
 import { rhythm, scale } from "../utils/typography"
 import {
@@ -11,7 +9,7 @@ import {
 } from "../utils/colors"
 
 // Import for Open Graph image
-import '../../static/images/magalisilvestre.jpg'
+// import '../../static/images/fb.png'
 
 const contact = {
   phone: typeof window !== 'undefined' ? "+2304004040": "Phone Number",
@@ -23,16 +21,8 @@ class Index extends React.Component {
 
     return (
       <div>
-        <Helmet>
-            <title>La plateforme pour organiser tes soirées jeux</title>
-            <meta property="og:title" content="La plateforme pour organiser tes soirées jeux | Wanna-Play.be" />
-            <meta name="description" content="Wanna Play rassemble la communauté du jeu de société à Bruxelles. Rejoins-nous pour construire avec nous une communauté qui te ressemble." />
-            <meta property="og:description" content="Wanna Play rassemble la communauté du jeu de société à Bruxelles. Rejoins-nous pour construire avec nous une communauté qui te ressemble." />
-            <link rel="canonical" href="https://www.wanna-play.be" />
-            <meta property="og:url" content="https://www.wanna-play.be" />
-        </Helmet>
 
-
+        THE DUCK IS COOKED
 
       </div>
     )
