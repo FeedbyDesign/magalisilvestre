@@ -16,10 +16,13 @@ import {
 //   email: typeof window !== 'undefined' ? "my@email.com": "Email"
 // }
 
-window.serverContactInfo = {
-  phone: process.env.phone,
-  email: process.env.email
+if (typeof window !== `undefined` && process.env.email !== `undefined`) {
+  window.serverContactInfo = {
+    phone: process.env.phone,
+    email: process.env.email
+  }
 }
+
 const devContactInfo = {
   phone: '+32999888777',
   email: 'dev@email.xyz',
