@@ -16,7 +16,7 @@ import {
 //   email: typeof window !== 'undefined' ? "my@email.com": "Email"
 // }
 
-const serverContactInfo = {
+window.serverContactInfo = {
   phone: process.env.phone,
   email: process.env.email
 }
@@ -28,7 +28,7 @@ const devContactInfo = {
 class Index extends React.Component {
   render() {
 
-    let contact = serverContactInfo.email ? serverContactInfo : devContactInfo
+    let contact = window.serverContactInfo.email ? window.serverContactInfo : devContactInfo
     let contactInfo
     if (typeof window !== 'undefined') {
       let phone
@@ -49,7 +49,7 @@ class Index extends React.Component {
       contactInfo = <div id="contactInfo">Nothing to show</div>
     }
 
-    console.log(serverContactInfo.email)
+    console.log(window.serverContactInfo.email)
 
     return (
       <div>
