@@ -11,52 +11,59 @@ import {
 // Import for Open Graph image
 // import '../../static/images/fb.png'
 
-// const contact = {
-//   phone: typeof window !== 'undefined' ? "+2304004040": "Phone Number",
-//   email: typeof window !== 'undefined' ? "my@email.com": "Email"
-// }
-
-if (typeof window !== `undefined` && process.env.email !== `undefined`) {
-  window.serverContactInfo = {
-    phone: process.env.phone,
-    email: process.env.email
-  }
-}
-
-const devContactInfo = {
-  phone: '+32999888777',
-  email: 'dev@email.xyz',
+const contact = {
+  phone: typeof window !== 'undefined' ? "+32 498 808 805": "Phone Number",
+  email: typeof window !== 'undefined' ? "coach@magalisilvestre.be": "Email"
 }
 
 class Index extends React.Component {
   render() {
 
-    let contact = window.serverContactInfo.email ? window.serverContactInfo : devContactInfo
     let contactInfo
     if (typeof window !== 'undefined') {
       let phone
       if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         phone = <a href={`tel:${contact.phone}`}>{contact.phone}</a>
       } else {
-        phone = <a>{contact.phone}</a>
+        phone = <span>{contact.phone}</span>
       }
       const email = <a href={`mailto:${contact.email}`} target="_top">{contact.email}</a>
       contactInfo = (
-        <div id="contactInfo">
+        <div
+          css={{
+            display: `flex`,
+            flexFlow: `row wrap`,
+            justifyContent: `center`,
+            ' > *': {
+              margin: `0 5px`
+            }
+          }}
+        >
           {email}
           <span>{' • '}</span>
           {phone}
         </div>
       )
-    } else {
-      contactInfo = <div id="contactInfo">Nothing to show</div>
     }
 
-    console.log(window.serverContactInfo.email)
-
     return (
-      <div>
+      <div
+        css={{
+          display: `flex`,
+          flexFlow: `column`,
+          minHeight: `100vh`,
+        }}
+      >
         <div
+          css={{
+            flexGrow: 1,
+            display: `flex`,
+            flexFlow: `column`,
+            justifyContent: `center`,
+            padding: `20px`,
+            margin: `auto`,
+            maxWidth: `800px`,
+          }}
           dangerouslySetInnerHTML={{
             __html: this.props.data.underConstruction.html,
           }}
@@ -64,9 +71,34 @@ class Index extends React.Component {
 
         {contactInfo}
 
-        <div id="feedbydesignFooter">
-          Feed by Design aide ce projet à voir le jour.<br/>
-          Notre portfolio est sur <a href='http://www.feedbydesign.com' target="_blank">feedbydesign.com</a> et on a une page <a href="https://www.facebook.com/feedbydesign/" target="_blank">Facebook</a>
+        <div
+          css={{
+            textAlign: `center`,
+            color: `white`,
+            width: `100vw`,
+            marginTop: 50,
+
+          }}
+        >
+          <p
+            css={{
+              background: `rgb(43, 201, 175)`,
+              padding: rhythm(1/2),
+              width: `100%`,
+              "> a": {
+                color: `inherit`,
+                fontWeight: `bold`,
+                textDecoration: `none`,
+                cursor: `pointer`,
+                ':hover': {
+                  borderBottom: `thick solid`
+                }
+              },
+            }}
+          >
+            Feed by Design aide ce projet à voir le jour.<br/>
+            Notre portfolio est sur <a href='http://www.feedbydesign.com' target="_blank">feedbydesign.com</a> et on a une page <a href="https://www.facebook.com/feedbydesign/" target="_blank">Facebook</a>
+          </p>
         </div>
       </div>
     )

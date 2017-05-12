@@ -27,11 +27,7 @@ const options = {
   overrideStyles: ({ rhythm, scale }, options) => ({
     html: {
       background: COLOR2,
-    },
-    body: {
-      padding: `50px`,
-      margin: `auto`,
-      maxWidth: `800px`,
+      overflow: `auto`
     },
     h2: {
       marginBottom: 0,
@@ -45,50 +41,25 @@ const options = {
     p: {
       textAlign: `center`,
     },
-    // a: {
-    //   color: `inherit`,
-    //   textDecoration: `none`,
-    //   cursor: `pointer`,
-    // },
-    // 'a:hover': {
-    //   borderColor: COLOR2,
-    // },
+    a: {
+      color: `inherit`,
+      textDecoration: `none`,
+      cursor: `pointer`,
+    },
+    'a:hover': {
+      borderColor: COLOR2,
+    },
     ".gatsby-resp-image-link": {
-      width: `500px`,
+      maxWidth: `500px`,
+      width: `100%`,
       margin: `auto`,
       pointerEvents: `none`,
       cursor: `default`,
     },
-    "#contactInfo": {
-      textAlign: `center`,
-      // fontWeight: `bold`,
-    },
-    "#feedbydesignFooter": {
-      position: `fixed`,
-        bottom: `20px`,
-        left: 0,
-      textAlign: `center`,
-      color: `white`,
-      padding: rhythm(1/2),
-      background: `rgb(43, 201, 175)`,
-      width: `100vw`,
-
-    },
-    "#feedbydesignFooter a": {
-      color: `inherit`,
-      fontWeight: `bold`,
-      textDecoration: `none`,
-      ':hover': {
-        textDecoration: `underline`
-      }
-    },
-    "#feedbydesignFooter a:hover": {
-      borderBottom: `thick solid`
-    }
     // [TABLET_MEDIA_QUERY]: {
     //   // Make baseFontSize on mobile 18px.
     //   html: {
-    //     fontSize: `${18 / 20 * 100}%`,
+    //     fontSize: `${18 / 16 * 100}%`,
     //   },
     // },
     // [MOBILE_MEDIA_QUERY]: {
