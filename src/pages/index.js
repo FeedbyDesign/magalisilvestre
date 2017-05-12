@@ -15,14 +15,20 @@ import {
 //   phone: typeof window !== 'undefined' ? "+2304004040": "Phone Number",
 //   email: typeof window !== 'undefined' ? "my@email.com": "Email"
 // }
-const contact = {
-  phone: process.env.phone ? process.env.phone : '+32999888777',
-  email: process.env.email ? process.env.email : 'dev@email.xyz',
+
+const serverContactInfo = {
+  phone: process.env.phone,
+  email: process.env.email
+}
+const devContactInfo = {
+  phone: '+32999888777',
+  email: 'dev@email.xyz',
 }
 
 class Index extends React.Component {
   render() {
 
+    let contact = serverContactInfo.email ? serverContactInfo : devContactInfo
     let contactInfo
     if (typeof window !== 'undefined') {
       let phone
@@ -42,6 +48,8 @@ class Index extends React.Component {
     } else {
       contactInfo = <div id="contactInfo">Nothing to show</div>
     }
+
+    console.log(serverContactInfo.email)
 
     return (
       <div>
