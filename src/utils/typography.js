@@ -19,60 +19,78 @@ const options = {
   // blockMarginBottom: 0.809, // Default to 1 rhythm = baseLineHeight
   headerFontFamily: [`Montserrat`, `sans-serif`],
   bodyFontFamily: [`Montserrat`, `sans-serif`],
-  headerColor: COLOR1,
-  bodyColor: COLOR1,
+  headerColor: COLOR4,
+  bodyColor: COLOR4,
+  headerWeight: 300,
   bodyWeight: 400,
   // plugins: [new CodePlugin()],
   overrideStyles: ({ rhythm, scale }, options) => ({
     html: {
-      background: COLOR4,
+      background: COLOR2,
     },
     body: {
-      background: COLOR4,
+      padding: `50px`,
+      margin: `auto`,
+      maxWidth: `800px`,
     },
-    h1: {
-      ...scale(0.809),
-      textAlign: `center`,
-      color: COLOR3
-    },
-    h4: {
-      color: COLOR2
-    },
-    button: {
-      border: `none`
-    },
-    section: {
-      display: `flex`,
-      flexFlow: `column`,
-      alignItems: `center`,
-    },
-    p: {
-      marginBottom: rhythm(0.382),
-      ':hover': {
-        color: COLOR2,
-      },
+    h2: {
+      marginBottom: 0,
+      fontWeight: 400,
     },
     "h1,h2,h3,h4,h5,h6": {
-      lineHeight: 1.168
+      textAlign: `center`,
+      lineHeight: 1.168,
+      textTransform: `uppercase`
     },
-    a: {
+    p: {
+      textAlign: `center`,
+    },
+    // a: {
+    //   color: `inherit`,
+    //   textDecoration: `none`,
+    //   cursor: `pointer`,
+    // },
+    // 'a:hover': {
+    //   borderColor: COLOR2,
+    // },
+    ".gatsby-resp-image-link": {
+      width: `500px`,
+      margin: `auto`,
+      pointerEvents: `none`,
+      cursor: `default`,
+    },
+    "#contactInfo": {
+      textAlign: `center`,
+      // fontWeight: `bold`,
+    },
+    "#feedbydesignFooter": {
+      position: `fixed`,
+        bottom: `20px`,
+        left: 0,
+      textAlign: `center`,
+      color: `white`,
+      padding: rhythm(1/2),
+      background: `rgb(43, 201, 175)`,
+      width: `100vw`,
+
+    },
+    "#feedbydesignFooter a": {
       color: `inherit`,
+      fontWeight: `bold`,
       textDecoration: `none`,
-      borderBottom: `thick solid`,
-      cursor: `pointer`,
+      ':hover': {
+        textDecoration: `underline`
+      }
     },
-    'a:hover': {
-      borderColor: COLOR2,
-    },
-    img: {
-      marginBottom: 0,
-    },
-    [TABLET_MEDIA_QUERY]: {
-      // Make baseFontSize on mobile 18px.
-      html: {
-        fontSize: `${18 / 20 * 100}%`,
-      },
-    },
+    "#feedbydesignFooter a:hover": {
+      borderBottom: `thick solid`
+    }
+    // [TABLET_MEDIA_QUERY]: {
+    //   // Make baseFontSize on mobile 18px.
+    //   html: {
+    //     fontSize: `${18 / 20 * 100}%`,
+    //   },
+    // },
     // [MOBILE_MEDIA_QUERY]: {
     //   // Make baseFontSize on mobile 16px.
     //   html: {

@@ -11,20 +11,53 @@ import {
 // Import for Open Graph image
 // import '../../static/images/fb.png'
 
+// const contact = {
+//   phone: typeof window !== 'undefined' ? "+2304004040": "Phone Number",
+//   email: typeof window !== 'undefined' ? "my@email.com": "Email"
+// }
 const contact = {
-  phone: typeof window !== 'undefined' ? "+2304004040": "Phone Number",
-  email: typeof window !== 'undefined' ? "my@email.com": "Email"
+  phone: process.env.phone ? process.env.phone : '+32999888777',
+  email: process.env.email ? process.env.email : 'dev@email.xyz',
 }
 
 class Index extends React.Component {
   render() {
 
+    let contactInfo
+    if (typeof window !== 'undefined') {
+      let phone
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        phone = <a href={`tel:${contact.phone}`}>{contact.phone}</a>
+      } else {
+        phone = <a>{contact.phone}</a>
+      }
+      const email = <a href={`mailto:${contact.email}`} target="_top">{contact.email}</a>
+      contactInfo = (
+        <div id="contactInfo">
+          {email}
+          <span>{' • '}</span>
+          {phone}
+        </div>
+      )
+    } else {
+      contactInfo = <div id="contactInfo">Nothing to show</div>
+    }
+
     return (
-      <div
-        dangerouslySetInnerHTML={{
-          __html: this.props.data.underConstruction.html,
-        }}
-        />
+      <div>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: this.props.data.underConstruction.html,
+          }}
+          />
+
+        {contactInfo}
+
+        <div id="feedbydesignFooter">
+          Feed by Design aide ce projet à voir le jour.<br/>
+          Notre portfolio est sur <a href='http://www.feedbydesign.com' target="_blank">feedbydesign.com</a> et on a une page <a href="https://www.facebook.com/feedbydesign/" target="_blank">Facebook</a>
+        </div>
+      </div>
     )
   }
 }

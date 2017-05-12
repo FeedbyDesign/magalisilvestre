@@ -18,8 +18,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-responsive-image`,
             options: {
-              maxWidth: 690,
-              backgroundColor: `#f7f0eb`,
+              maxWidth: 500,
+              backgroundColor: `transparent`,
             },
           },
           {
@@ -30,7 +30,7 @@ module.exports = {
           },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
-          `gatsby-remark-autolink-headers`,
+          // `gatsby-remark-autolink-headers`,
         ],
       },
     },

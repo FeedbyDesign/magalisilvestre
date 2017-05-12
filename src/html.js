@@ -27,7 +27,7 @@ module.exports = React.createClass({
     }
 
     return (
-      <html>
+      <html lang={`${meta.lang}`}>
         <head>
           <link
             rel="preload"
@@ -55,7 +55,7 @@ module.exports = React.createClass({
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <html lang={`${meta.lang}`} />
+
           <meta property="og:type" content="website" />
           <meta property="og:image" content={`${meta.url}static${require(`!file-loader!../static/images/fb.png`)}`} />
           <meta property="og:site_name" content={`${meta.name}`} />
@@ -72,7 +72,6 @@ module.exports = React.createClass({
           <meta property="og:description" content={`${meta.description}`} />
           <link rel="canonical" href={`${meta.url}`} />
           <meta property="og:url" content={`${meta.url}`} />
-
 
           <TypographyStyle typography={typography} />
           {css}
