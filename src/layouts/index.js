@@ -19,7 +19,7 @@ class DefaultLayout extends React.Component {
     return (
       <div css={{position: `relative`}}>
 
-        {this.props.children}
+        {this.props.children()}
 
       </div>
     )

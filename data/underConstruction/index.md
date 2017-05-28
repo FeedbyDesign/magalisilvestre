@@ -3,7 +3,7 @@ name: underConstuction
 ---
 
 
-![Magali Silvestre](MagaliSilvestre-500px_blanc.jpg)
+![Magali Silvestre](MagaliSilvestre-1000px.png)
 
 ## Coaching
 #### créativité • vie • entrepreneuriat
