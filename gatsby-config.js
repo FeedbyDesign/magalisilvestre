@@ -20,6 +20,7 @@ module.exports = {
             options: {
               maxWidth: 500,
               backgroundColor: `transparent`,
+              quality: 100
             },
           },
           {

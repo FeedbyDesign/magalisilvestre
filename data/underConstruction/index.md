@@ -1,10 +1,9 @@
 ---
 name: underConstuction
-logo: MagaliSilvestre-blanc_500px.png
 ---
 
 
-![Magali Silvestre](MagaliSilvestre_fondJaune-500px.png)
+![Magali Silvestre](MagaliSilvestre-500px_blanc.jpg)
 
 ## Coaching
 #### créativité • vie • entrepreneuriat

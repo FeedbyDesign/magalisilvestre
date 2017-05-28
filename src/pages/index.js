@@ -76,7 +76,7 @@ class Index extends React.Component {
             textAlign: `center`,
             color: `white`,
             width: `100vw`,
-            margin: `50px 0 ${rhythm(1/2)}`,
+            margin: `50px 0 ${rhythm(0.618)}`,
 
           }}
         >
