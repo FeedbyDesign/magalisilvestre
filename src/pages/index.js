@@ -31,11 +31,17 @@ class Index extends React.Component {
       contactInfo = (
         <div
           css={{
+            ...scale(.2),
             display: `flex`,
             flexFlow: `row wrap`,
             justifyContent: `center`,
             ' > *': {
               margin: `0 5px`
+            },
+            ' > a': {
+              ':hover': {
+                textDecoration: `underline`,
+              }
             }
           }}
         >
