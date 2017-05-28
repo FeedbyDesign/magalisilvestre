@@ -9,4 +9,4 @@ logo: MagaliSilvestre-blanc_500px.png
 ## Coaching
 #### créativité • vie • entrepreneuriat
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede
+J'accompagne les personnes qui veulent atteindre leurs objectifs dans différents domaines de leur vie afin de trouver leurs réponses et de leur permettre de vivre plus consciemment, joyeusement, sereinement et de se reconnecter à qui ils sont.

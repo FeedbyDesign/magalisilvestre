@@ -76,22 +76,25 @@ class Index extends React.Component {
             textAlign: `center`,
             color: `white`,
             width: `100vw`,
-            marginTop: 50,
+            margin: `50px 0 ${rhythm(1/2)}`,
 
           }}
         >
           <p
             css={{
-              background: `rgb(43, 201, 175)`,
+              background: COLOR4,
+              color: COLOR2,
               padding: rhythm(1/2),
               width: `100%`,
+              marginBottom: 0,
               "> a": {
                 color: `inherit`,
                 fontWeight: `bold`,
                 textDecoration: `none`,
                 cursor: `pointer`,
                 ':hover': {
-                  borderBottom: `thick solid`
+                  // borderBottom: `thick solid`,
+                  color: `rgb(43, 201, 175)`,
                 }
               },
             }}
