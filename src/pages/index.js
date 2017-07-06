@@ -8,6 +8,16 @@ import {
   COLOR4
 } from "../utils/colors"
 
+// import magali from '../../data/underConstruction/MagaliSilvestre-1000px.png'
+// <img
+//   src={magali}
+//   css={{
+//     maxWidth: 500,
+//     display: `block`,
+//     margin: `auto`,
+//   }}
+// />
+
 // Import for Open Graph image
 // import '../../static/images/fb.png'
 
@@ -60,6 +70,7 @@ class Index extends React.Component {
           minHeight: `100vh`,
         }}
       >
+
         <div
           css={{
             flexGrow: 1,
